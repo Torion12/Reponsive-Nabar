@@ -1,0 +1,94 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+header{
+	background: #000;
+}
+
+
+li {
+	list-style: none;
+}
+
+a{
+	color: whitesmoke;
+	text-decoration: none;
+}
+
+
+.navbar{
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0 24px;
+}
+
+.nav-menu{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 60px;
+}
+
+.logo{
+	font-size: 2rem;
+}
+
+.nav-link{
+	transition: 0.7s ease;
+}
+
+.nav-link:hover {
+	color: dodgerblue;
+}
+
+.hamburger{
+	display: none;
+	cursor: pointer;
+}
+
+.bar{
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background: whitesmoke;
+}
+
+@media(max-width: 768px){
+	.hamburger {
+		display: block;
+	}
+
+	.hamburger.active .bar:nth-child(2){
+		opacity: 0;
+	}
+	.hamburger.active .bar:nth-child(1){
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.hamburger.active .bar:nth-child(3){
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	.nav-menu{
+		position: fixed;
+		left:-100% ;
+		top: 100px;
+		flex-direction: column;
+		background: #000;
+		width: 100%;
+		padding: 20px 0px;
+	}
+
+	.nav-menu.active{
+		left: 0;
+	}
+}
